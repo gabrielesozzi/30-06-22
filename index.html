@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social de' noantri</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/3a0c42390b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <section class="empty">
+        <nav>
+          <div class="link">
+            <img src="./logo.png" alt="logo" class="logo" />
+            <a href="">Home</a>
+            <a href="">Mission</a>
+            <a href="">Contact us</a>
+          </div>
+          <div class="filter">
+            <input
+              type="text"
+              class="filter-input"
+              id="filter-input"
+              placeholder="Trova i post di.. "
+            />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+
+          <img src="./img.svg" alt="imgNav" class="imgNav" />
+        </nav>
+      </section>
+      <section class="friends"></section>
+
+      <section class="messages">
+        <div class="add-new-message">
+          <input
+            type="text"
+            class="input-text"
+            id="input-text"
+            placeholder="Inserisci il tuo messaggio"
+          />
+          <input
+            type="text"
+            class="input-sender"
+            id="input-sender"
+            placeholder="inserisci il tuo username"
+          />
+          <button class="add-new-message-btn">Invio messaggio</button>
+        </div>
+
+        <div class="messages-list"></div>
+      </section>
+    </main>
+    <script src="./script.js" type="module"></script>
+    <script src="./utils.js" type="module"></script>
+    <script src="./api.js" type="module"></script>
+  </body>
+</html>
