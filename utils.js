@@ -1,3 +1,5 @@
+import { DELETE, GET } from "./api.js";
+
 const c = (el) => document.createElement(el);
 
 const q = (el) => document.querySelector(el);
@@ -37,17 +39,25 @@ const createFriendEl = (parent, name, photo) => {
   parent.appendChild(wrapper);
 };
 
-const createMessageEl = (parent, text, sender, date) => {
+const createMessageEl = (parent, text, sender, date, id) => {
   const wrapper = c("div");
   const textPar = c("p");
   const senderPar = c("p");
   const dataPar = c("p");
 
   wrapper.className = "messageCard";
+
+  wrapper.setAttribute("id", id);
   textPar.textContent = text;
   senderPar.textContent = sender;
   // dataPar.textContent = date.split('T')[0].split('-').reverse().join('-');
   dataPar.textContent = date;
+
+  wrapper.addEventListener("click", () => {
+    DELETE("https://edgemony-backend.herokuapp.com/messages/", id).then(() =>
+      location.reload()
+    );
+  });
 
   wrapper.append(textPar, senderPar, dataPar);
   parent.appendChild(wrapper);

@@ -27,8 +27,8 @@ GET("https://edgemony-backend.herokuapp.com/friends").then((friendList) => {
 GET("https://edgemony-backend.herokuapp.com/messages").then((messagesList) => {
   messagesList
     .reverse()
-    .map(({ text, sender, date }) =>
-      createMessageEl(messagesListEl, text, sender, date)
+    .map(({ text, sender, date, id }) =>
+      createMessageEl(messagesListEl, text, sender, date, id)
     ); // Questo è identico a quello che succede in riga 11
 });
 
@@ -80,6 +80,3 @@ filterInput.addEventListener("input", (e) => {
     }
   );
 });
-
-// AVANZATO
-// Aggiungere la funzionalita di rimozione per ogni card, che una volta cliccata cancella la card in questione.
